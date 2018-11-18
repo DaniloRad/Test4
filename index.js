@@ -149,7 +149,7 @@
 
     var Volume = document.getElementById("volume");
     Volume.addEventListener("change", SliderVolume);
-
+    var audioName=document.getElementById("audio_name");
     function SliderVolume(e) {
 
         snd.volume = e.target.value / 100;
@@ -165,9 +165,12 @@
         if (Bank.checked === false) {
             var NumberInBank = SearchForSrc1(KeyboardLetter, 1);
             snd.setAttribute("src", bankOne[NumberInBank].url);
+            audioName.innerHTML=bankOne[NumberInBank].id;
         } else {
             var NumberInBank = SearchForSrc1(KeyboardLetter, 0);
             snd.setAttribute("src", bankTwo[NumberInBank].url);
+            audioName.innerHTML=bankTwo[NumberInBank].id;
+
         }
 
 
@@ -189,9 +192,14 @@
                 var NumberInBank = SearchForSrc2(KeyboardLetter, 1);
                 snd.setAttribute("src", bankOne[NumberInBank].url);
 
+                audioName.innerHTML=bankOne[NumberInBank].id;
+
+
             } else {
                 var NumberInBank = SearchForSrc2(KeyboardLetter, 0);
                 snd.setAttribute("src", bankTwo[NumberInBank].url);
+                audioName.innerHTML=bankTwo[NumberInBank].id;
+
             }
 
 
